@@ -16,7 +16,7 @@
         {
             if (Year <= 1970 || Year >= 2024)
             {
-                throw new ArgumentOutOfRangeException(nameof(Year), "Year must be at least 1970");
+                throw new ArgumentOutOfRangeException(nameof(Year), "Year must be between 1970 and 2024");
             }
         }
         public void ValidateCompetition()
@@ -30,6 +30,11 @@
             {
                 throw new ArgumentException("Competition name must be at least 3 characters", nameof(Competition));
             }
+        }
+        public void Validate()
+        {
+            ValidateYear();
+            ValidateCompetition();
         }
     }
 }
