@@ -7,12 +7,12 @@ using System.Xml;
 
 namespace TrophyLibrary
 {
-    public class ThophyRepository
+    public class TrophyRepository
     {
         private int _nextId = 1;
         private readonly List<Trophy> _trophies = new();
 
-        public ThophyRepository()
+        public TrophyRepository()
         {
             _trophies.Add(new Trophy { Id = 1, Competition = "World Cup", Year = 1974 });
             _trophies.Add(new Trophy { Id = 2, Competition = "World Cup", Year = 1978 });
@@ -57,6 +57,13 @@ namespace TrophyLibrary
             return _trophies.Find(trophy => trophy.Id == id);
         }
 
+        public IEnumerable<Trophy> GetAll()
+        {
+            IEnumerable<Trophy> getAllList = new List<Trophy>(_trophies);
+
+            return getAllList;
+        }
+
         public Trophy Add(Trophy trophy)
         {
             trophy.Validate();
@@ -86,6 +93,7 @@ namespace TrophyLibrary
             existingTrophy.Year = trophy.Year;
             return existingTrophy;
         }
+
 
     }
 }

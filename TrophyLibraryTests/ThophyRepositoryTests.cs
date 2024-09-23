@@ -12,7 +12,7 @@ namespace TrophyLibrary.Tests
         [TestMethod()]
         public void ThophyRepositoryTest()
         {
-            var repository = new ThophyRepository();
+            var repository = new TrophyRepository();
             var trophies = repository.Get().ToList();
             Assert.AreEqual(13, trophies.Count);
         }
@@ -20,7 +20,7 @@ namespace TrophyLibrary.Tests
         [TestMethod()]
         public void GetTest()
         {
-            var repository = new ThophyRepository();
+            var repository = new TrophyRepository();
 
             var allTrophies = repository.Get().ToList();
             Assert.AreEqual(13, allTrophies.Count);
@@ -42,7 +42,7 @@ namespace TrophyLibrary.Tests
         [TestMethod()]
         public void GetByIdTest()
         {
-            var repository = new ThophyRepository();
+            var repository = new TrophyRepository();
 
             var trophy = repository.GetById(1);
             Assert.IsNotNull(trophy);
@@ -55,7 +55,7 @@ namespace TrophyLibrary.Tests
         [TestMethod()]
         public void AddTest()
         {
-            var repository = new ThophyRepository();
+            var repository = new TrophyRepository();
             var newTrophy = new Trophy { Competition = "Euro Cup", Year = 2023 };
 
             var addedTrophy = repository.Add(newTrophy);
@@ -71,7 +71,7 @@ namespace TrophyLibrary.Tests
         [TestMethod()]
         public void RemoveTest()
         {
-            var repository = new ThophyRepository();
+            var repository = new TrophyRepository();
 
             var removedTrophy = repository.Remove(1);
             Assert.IsNotNull(removedTrophy);
@@ -87,7 +87,7 @@ namespace TrophyLibrary.Tests
         [TestMethod()]
         public void UpdateTest()
         {
-            var repository = new ThophyRepository();
+            var repository = new TrophyRepository();
             var updatedTrophy = new Trophy { Competition = "Updated Competition", Year = 2023 };
 
             var result = repository.Update(1, updatedTrophy);
