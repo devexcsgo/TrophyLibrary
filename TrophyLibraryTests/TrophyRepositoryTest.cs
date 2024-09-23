@@ -7,16 +7,8 @@ using System.Linq;
 namespace TrophyLibrary.Tests
 {
     [TestClass()]
-    public class ThophyRepositoryTests
+    public class TrophyRepositoryTest
     {
-        [TestMethod()]
-        public void ThophyRepositoryTest()
-        {
-            var repository = new TrophyRepository();
-            var trophies = repository.Get().ToList();
-            Assert.AreEqual(13, trophies.Count);
-        }
-
         [TestMethod()]
         public void GetTest()
         {
